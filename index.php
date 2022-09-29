@@ -34,8 +34,8 @@
     <div>
       <h1 class="text-3xl">Lékařské záznamy</h1>
       <div class="flex flex-row gap-3 mt-3">
-        <a href="/procedure.php" class=""><button class="block uppercase shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded">Přidat zdravotní úkon</button></a>
-        <a href="/patient.php" class="block"><button class="block uppercase shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded">Přidat pacienta</button></a>
+        <a href="add/procedure.php" class=""><button class="block uppercase shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded">Přidat zdravotní úkon</button></a>
+        <a href="add/patient.php" class="block"><button class="block uppercase shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded">Přidat pacienta</button></a>
       </div>
     </div>
     <div class="border p-3 rounded border-gray-500">
