@@ -1,3 +1,11 @@
+  <?php
+
+    if(isset($_POST) && !empty($_POST)){
+      $id = $_POST["patient"];
+      header("Location: patient.php?id=".$id);
+    };
+
+  ?>
 <!doctype html>
 <html>
 <head>
@@ -32,11 +40,11 @@
     </div>
     <div class="border p-3 rounded border-gray-500">
       <h1 class="text-3xl text-right mb-4">Vyber pacienta</h1>
-      <form action="." method="post" class="flex flex-row gap-5">
+      <form action="" method="post" class="flex flex-row gap-5">
         <select name="patient" id="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg">
           <option value="" selected hidden>--Vyberte Pacienta--</option>
           <?php foreach($patients as $p): ?>
-            <option value="<?= $p["patientId"] ?>"><?= $p["name"] ?> <?= $p["surname"] ?></option>
+            <option value="<?= $p["id"] ?>"><?= $p["name"] ?> <?= $p["surname"] ?></option>
           <?php endforeach; ?>
         </select>
           <button type="submit"  class="uppercase mx-auto shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded">Vybrat</button>
@@ -63,13 +71,4 @@
   </div>
  </div>
 </body>
-  <?php
-
-    if(isset($_POST) && !empty($_POST)){
-      $id = $_POST["patient"];
-      header("Location: patient.php?id=".$id);
-      die();
-    };
-
-  ?>
 </html>
