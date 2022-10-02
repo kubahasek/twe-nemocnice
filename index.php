@@ -2,7 +2,7 @@
 
     if(isset($_POST) && !empty($_POST)){
       $id = $_POST["patient"];
-      header("Location: patient.php?id=".$id);
+      header("Location: detail/patient.php?id=".$id);
     };
 
   ?>
