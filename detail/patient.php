@@ -28,7 +28,7 @@
     $sql = "SELECT sum(pr.price) as totalPrice from report r 
     inner join procedures pr on r.procedure_id = pr.id
     inner join patient p on p.id = r.patient_id
-    where p.id = :patientId";
+    where p.id = :patientId and r.deleted_at is null";
     $stmt = $conn->prepare($sql);
     $stmt->execute([
       "patientId" => $_GET["id"]
