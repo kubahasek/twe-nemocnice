@@ -41,7 +41,7 @@
         <select name="patient" id="" class="bg-gray-50 border border-gray-300 text-gray-900 w-full p-4 text-sm rounded-lg">
           <option value="" selected hidden>--Vyberte Pacienta--</option>
           <?php foreach($patients as $p): ?>
-            <option value="<?= $p["id"] ?>"><?= $p["name"] ?> <?= $p["surname"] ?></option>
+            <option value="<?= $p["id"] ?>" <?= isset($_GET["id"]) && $_GET["id"] == $p["id"] ? "selected" : "" ?> ><?= $p["name"] ?> <?= $p["surname"] ?></option>
           <?php endforeach; ?>
         </select></label>
         <label class="flex flex-col p-2 w-full" for="">Výkon
