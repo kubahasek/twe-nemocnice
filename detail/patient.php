@@ -8,7 +8,7 @@
     $sql = "SELECT r.id as reportId, r.date, pr.number as procedureNum, pr.id as procedureId, pr.title as procedureName, r.note as procedureNote, pr.price as procedurePrice from report r 
     inner join procedures pr on r.procedure_id = pr.id
     inner join patient p on p.id = r.patient_id
-    where p.id = :patientId
+    where p.id = :patientId and r.deleted_at is null
     ORDER BY r.date";
     $stmt = $conn->prepare($sql);
     $stmt->execute([
@@ -71,7 +71,7 @@
           <td class="border border-gray-500 p-2"><?= $d["date"] ?></td>
           <td class="border border-gray-500 p-2"><a href="/2/nemocnice/detail/procedure.php?id=<?= $d["procedureId"] ?>" class="text-blue-500 underline"><?= $d["procedureNum"] ?></a> <?= $d["procedureName"] ?><br>Info: <?= $d["procedureNote"] ?></td>
           <td class="border border-gray-500 p-2"><?= number_format($d["procedurePrice"], 0, ",", " ") ?> Kč</td>
-          <td class="border border-gray-500 p-2"><a class="text-blue-500 underline" href="/2/nemocnice/delete/procedure.php?id=<?= $d["reportId"] ?>">Smazat</a></td>
+          <td class="border border-gray-500 p-2"><a class="text-blue-500 underline" href="/2/nemocnice/delete/procedure.php?id=<?= $d["reportId"] ?>&redirectTo=/2/nemocnice/detail/patient.php?id=<?= $patient["id"] ?>">Smazat</a></td>
         </tr>
       <?php endforeach; ?>
     </table>
