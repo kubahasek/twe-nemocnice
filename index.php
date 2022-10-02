@@ -20,6 +20,7 @@
   $sql = "SELECT concat(p.name,' ', p.surname) as name, p.id as patientId, r.date, pr.number as procedureNum, pr.id as procedureId, pr.title as procedureName from report r 
   inner join procedures pr on r.procedure_id = pr.id
   inner join patient p on p.id = r.patient_id
+  WHERE r.deleted_at is null
   ORDER BY r.date
   LIMIT 5";
   $stmt = $conn->query($sql);
