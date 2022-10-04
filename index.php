@@ -21,7 +21,7 @@
   inner join procedures pr on r.procedure_id = pr.id
   inner join patient p on p.id = r.patient_id
   WHERE r.deleted_at is null
-  ORDER BY r.date
+  ORDER BY r.date DESC
   LIMIT 5";
   $stmt = $conn->query($sql);
   $data = $stmt -> fetchAll();
