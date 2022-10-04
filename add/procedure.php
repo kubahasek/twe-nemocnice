@@ -35,6 +35,7 @@
 </head>
 <body>
     <div class="w-[50%] mx-auto mt-4">
+        <a href="/2/nemocnice/" class=""><button class="block mb-5 uppercase shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded">Domů</button></a>
         <h1 class="text-3xl text-center">Nový zdravotní úkon</h1>
        <form action="" method="post" class="flex flex-col items-center w-full">
         <label class="flex flex-col p-2 w-full" for="">Pacient

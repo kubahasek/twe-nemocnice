@@ -47,6 +47,7 @@
 </head>
 <body>
   <div class="w-[80%] mx-auto mt-5">
+        <a href="/2/nemocnice/" class=""><button class="block mb-5 uppercase shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded">Domů</button></a>
     <div class="flex flex-row justify-between">
       <div>
         <h1 class="text-3xl mb-2">Pacient <?= $patient["name"]." ".$patient["surname"] ?></h1>
