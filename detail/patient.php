@@ -69,7 +69,7 @@
       </tr>
       <?php foreach($data as $d): ?>
         <tr class="border border-gray-500">
-          <td class="border border-gray-500 p-2"><?= $d["date"] ?></td>
+          <td class="border border-gray-500 p-2"><?= date_format(date_create($d["date"]), "d.m.yy H:m") ?></td>
           <td class="border border-gray-500 p-2"><a href="/2/nemocnice/detail/procedure.php?id=<?= $d["procedureId"] ?>" class="text-blue-500 underline"><?= $d["procedureNum"] ?></a> <?= $d["procedureName"] ?><br>Info: <?= $d["procedureNote"] ?></td>
           <td class="border border-gray-500 p-2"><?= number_format($d["procedurePrice"], 0, ",", " ") ?> Kč</td>
           <td class="border border-gray-500 p-2"><a class="text-blue-500 underline" href="/2/nemocnice/delete/procedure.php?id=<?= $d["reportId"] ?>&redirectTo=/2/nemocnice/detail/patient.php?id=<?= $patient["id"] ?>">Smazat</a></td>
