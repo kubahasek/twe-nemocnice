@@ -43,8 +43,8 @@
     </div>
     <div class="border p-3 rounded border-gray-500">
       <h1 class="text-3xl text-right mb-4">Vyber pacienta</h1>
-      <form action="" method="post" class="flex flex-row gap-5">
-        <select name="patient" id="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg">
+      <form action="detail/patient.php" method="get" class="flex flex-row gap-5">
+        <select name="id" id="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg">
           <option value="" selected hidden>--Vyberte Pacienta--</option>
           <?php foreach($patients as $p): ?>
             <option value="<?= $p["id"] ?>"><?= $p["name"] ?> <?= $p["surname"] ?></option>
