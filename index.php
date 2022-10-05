@@ -42,6 +42,14 @@
       </div>
     </div>
     <div class="border p-3 rounded border-gray-500">
+      <h1 class="text-3xl text-right mb-4">Hledat</h1>
+
+      <form action="search.php" method="get" class="flex flex-row gap-5">
+        <input class="input border border-gray-400 appearance-none rounded w-full p-4 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600" type="text" name="search" id="">
+        <button type="submit"  class="uppercase mx-auto shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded">Hledej</button>
+      </form>
+    </div>
+    <div class="border p-3 rounded border-gray-500">
       <h1 class="text-3xl text-right mb-4">Vyber pacienta</h1>
       <form action="detail/patient.php" method="get" class="flex flex-row gap-5">
         <select name="id" id="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg">
