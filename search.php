@@ -3,14 +3,13 @@
     require "db.php";
 
     if (isset($_GET["search"])) {
-    $sqlReport = "SELECT pa.name, pa.surname, r.note, p.id, p.number, p.title from report r INNER JOIN procedures p on r.procedure_id = p.id INNER JOIN patient pa on pa.id = r.patient_id 
+    $sqlReport = "SELECT pa.name, pa.surname, r.note, p.id, p.number, p.title from report r INNER JOIN procedures p on r.procedure_id = p.id
+     INNER JOIN patient pa on pa.id = r.patient_id 
     WHERE (
         r.note  like '%' :search '%' or
         pa.name like  '%' :search '%' or
         pa.surname like '%' :search '%'
-    )
-    group by p.number
-    ";
+    )";
 
     $sqlProcedure = "SELECT * from procedures 
     WHERE (
@@ -72,11 +71,13 @@
       <?php if(count($reports) > 0): ?>
       <table class="w-full border border-gray-500 text-left mt-3">
         <tr class="bg-gray-400">
+          <th class="border border-gray-500 p-2">Jméno</th>
           <th class="border border-gray-500 p-2">Procedura</th>
           <th class="border border-gray-500 p-2">Odkaz</th>
         </tr>
         <?php foreach($reports as $r): ?>
           <tr class="border border-gray-500">
+            <td class="border border-gray-500 p-2"><?= $r["name"] ?> <?= $r["surname"] ?></td>
             <td class="border border-gray-500 p-2"><?= $r["number"] ?> <?= $r["title"] ?></td>
             <td class="border border-gray-500 p-2"><a href="/2/nemocnice/detail/procedure.php?id=<?= $r["id"] ?>" class="text-blue-500 underline">LINK</a></td>
           </tr>
