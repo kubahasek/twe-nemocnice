@@ -73,7 +73,7 @@
       </tr>
       <?php foreach($data as $d): ?>
         <tr class="border border-gray-500">
-          <td class="border border-gray-500 p-2"><?= date_format(date_create($d["date"]), "d.m.Y H:m") ?></td>
+          <td class="border border-gray-500 p-2"><?= date_format(date_create($d["date"]), "d.m.Y H:i") ?></td>
           <td class="border border-gray-500 p-2"><a href="detail/patient.php?id=<?= $d["patientId"] ?>" class="text-blue-500 underline"><?= $d["name"] ?></a></td>
           <td class="border border-gray-500 p-2"><a href="detail/procedure.php?id=<?= $d["procedureId"] ?>" class="text-blue-500 underline"><?= $d["procedureNum"] ?></a> <?= $d["procedureName"] ?></td>
         </tr>
